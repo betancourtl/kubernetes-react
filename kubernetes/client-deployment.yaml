@@ -1,15 +1,10 @@
 apiVersion: apps/v1
-# object type
 kind: Deployment
 metadata:
-  # name of the deployment
   name: client-deployment
 spec:
-  # 3 pods running
   replicas: 3
   selector:
-    # component is managing the web (frontend)
-    # matchlabels component need to match template.metadata.labels.component value.
     matchLabels:
       component: web
   template:
